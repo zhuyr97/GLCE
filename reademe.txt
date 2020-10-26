@@ -1,0 +1,17 @@
+This is a implementation of our paper “ Learning Dual Transformation Networks for Image
+Contrast Enhancement”and for non-commercial use only. You need to install Python with Tensorflow-GPU to run this code.
+
+Install Tensorflow： https://www.tensorflow.org/install/
+
+
+Usage:
+
+1. Preparing training data: put low-contrast images into "/TrainData/input" and label images into "/TrainData/label". Note that the pair images' indexes **must be** the same.  Should modify the corresponding paths in the codes.
+
+2. Run 
+"training.py" for training and trained models should be generated at "/model".
+
+3. After training, run 
+"testing_grayimgs.py" to test gray images.
+"testing_colorimgs.py" to test colorimages.
+
