@@ -6,14 +6,14 @@ import tensorflow as tf
 import matplotlib.pyplot as plt
 from inference import inference
 
-#os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
-#os.environ["CUDA_VISIBLE_DEVICES"] = "3"
+os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
+os.environ["CUDA_VISIBLE_DEVICES"] = "3"
 
 tf.reset_default_graph()
 
-input_path = '/ghome/zhuyr/ImageEnhance/test/in/'
-result_path ='/gdata/zhuyr/ImageEnhance/model_in/'
-save_model_path= '/gdata/zhuyr/ImageEnhance/model/'
+input_path = './testing_imgs/'# the path of testing images
+result_path ='/testing_results/' # the path of saving images
+save_model_path= './model/' 
 model =save_model_path +"model"
 if not os.path.exists(result_path):
     os.mkdir(result_path)
@@ -41,7 +41,7 @@ with tf.Session(config=config) as sess:
 	for i in range(num_img):
 		filename[i] = input_path + filename[i]
 		print(filename[i])
-		img=cv2.imread(filename[i])#读取文件
+		img=cv2.imread(filename[i])
 		img_shape = img.shape
 		if len(img_shape)==3:
 			yuv=cv2.cvtColor(img,cv2.COLOR_BGR2YUV)

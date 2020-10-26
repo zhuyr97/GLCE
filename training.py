@@ -10,8 +10,8 @@ import matplotlib.pyplot as plt
 from loss import local_loss,compute_L1_loss,compute_L2_loss,compute_gradient_loss
 from inference import inference
 
-#os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
-#os.environ["CUDA_VISIBLE_DEVICES"] = "2"
+os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
+os.environ["CUDA_VISIBLE_DEVICES"] = "2"
 tf.reset_default_graph()
 
 
@@ -50,8 +50,8 @@ if __name__ == '__main__':
    learning_rate = tf.placeholder(tf.float32, [])
  
    ################## training data #################################### 
-   input_path = '/gdata/zhuyr/ImageEnhance/input3/'    # the path of input images
-   gt_path =  '/gdata/zhuyr/ImageEnhance/gt3/'     # the path of ground truth
+   input_path = '/gdata/zhuyr/ImageEnhance/input/'    # the path of input images
+   gt_path =  '/gdata/zhuyr/ImageEnhance/gt/'     # the path of ground truth
 
    filename = os.listdir(input_path)
    for i in range(len(filename)):

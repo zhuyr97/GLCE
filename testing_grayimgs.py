@@ -7,13 +7,13 @@ import matplotlib.pyplot as plt
 from inference import inference
 import time
 
-#os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
-#os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 tf.reset_default_graph()
 
-input_path = '/ghome/zhuyr/ImageEnhance/test/in/'# the path of testing images
-result_path ='/gdata/zhuyr/ImageEnhance/model_in/' # the path of saving images
-save_model_path= '/gdata/zhuyr/ImageEnhance/model/' 
+input_path = './testing_imgs/'# the path of testing images
+result_path ='/testing_results/' # the path of saving images
+save_model_path= './model/' 
 model =save_model_path +"model"
 if not os.path.exists(result_path):
     os.mkdir(result_path)

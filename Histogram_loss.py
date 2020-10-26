@@ -21,7 +21,7 @@ def Diff_Dist_tensor(x, bins=256, min=0.0, max=1.0):
         h_r = BIN_Table[dim]  # h_r
         h_r_sub_1 = BIN_Table[dim - 1]  # h_(r-1)
         h_r_plus_1 = BIN_Table[dim + 1]  # h_(r+1)
-        # 中间计算都是tensor进行的
+
         h_r = tf.convert_to_tensor(h_r, dtype=tf.float32, name='h_r')
         h_r_sub_1 = tf.convert_to_tensor(h_r_sub_1, dtype=tf.float32, name='h_r_sub_1')
         h_r_plus_1 = tf.convert_to_tensor(h_r_plus_1, dtype=tf.float32, name='h_r_plus_1')
@@ -53,7 +53,7 @@ def Diff_Dist_tensor_with_diff(x,bins=256, min=0.0, max=1.0):
     channels = tf.shape(x)[3]
  
     delta = (max - min) / bins
-    BIN_Table = np.arange(0, bins, 1)  # .astype(np.float64)
+    BIN_Table = np.arange(0, bins, 1)  
     BIN_Table = BIN_Table * delta
 
     zero = tf.constant([[[0.0]]])
@@ -63,7 +63,7 @@ def Diff_Dist_tensor_with_diff(x,bins=256, min=0.0, max=1.0):
         h_r = BIN_Table[dim]  # h_r
         h_r_sub_1 = BIN_Table[dim - 1]  # h_(r-1)
         h_r_plus_1 = BIN_Table[dim + 1]  # h_(r+1)
-        #中间计算都是tensor进行的
+
         h_r = tf.convert_to_tensor(h_r,dtype=tf.float32,name='h_r')
         h_r_sub_1= tf.convert_to_tensor(h_r_sub_1,dtype=tf.float32,name='h_r_sub_1')
         h_r_plus_1 = tf.convert_to_tensor(h_r_plus_1,dtype=tf.float32,name='h_r_plus_1')
@@ -92,6 +92,5 @@ def Diff_Dist_tensor_with_diff(x,bins=256, min=0.0, max=1.0):
                 temp_mean_temp = tf.expand_dims(temp_mean_temp, -1)
                 temp_mean = tf.concat([temp_mean, temp_mean_temp], axis=-1)
 
-    #assert temp_mean_last.get_shape() == temp_mean.get_shape()
     diff = tf.abs(temp_mean-zero)
     return temp_mean,diff
