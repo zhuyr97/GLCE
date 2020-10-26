@@ -6,7 +6,7 @@ Install Tensorflow： https://www.tensorflow.org/install/
 
 Usage:
 
-1. Preparing training data: put low-contrast images into "/TrainData/input" and label images into "/TrainData/gt". Note that the pair images' indexes **must be** the same.  Should modify the corresponding paths in the codes.
+1. Preparing training data: put low-contrast images into "./TrainData/input" and label images into "./TrainData/gt". Note that the pair images' indexes **must be** the same.  Should modify the corresponding paths in the codes.
 
 2. Run 
 "training.py" for training and trained models should be generated at "/model".

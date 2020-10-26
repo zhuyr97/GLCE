@@ -11,9 +11,9 @@ os.environ["CUDA_VISIBLE_DEVICES"] = "3"
 
 tf.reset_default_graph()
 
-input_path = './testing_imgs/'# the path of testing images
-result_path ='/testing_results/' # the path of saving images
-save_model_path= './model/' 
+input_path = './testing_colorimgs/'# the path of testing images
+result_path ='/testing_color_results/' # the path of saving images
+save_model_path= './pre-trained_model/' 
 model =save_model_path +"model"
 if not os.path.exists(result_path):
     os.mkdir(result_path)
