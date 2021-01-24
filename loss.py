@@ -1,6 +1,5 @@
 import numpy as np
 import tensorflow as tf
-from Diff_Dist import Diff_Dist_tensor
 
 def compute_L1_loss(pred, gt):
    loss = tf.abs(pred - gt)
